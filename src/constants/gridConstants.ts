@@ -27,10 +27,15 @@ export const GRID_PROPS = {
 export const COLUMN_WIDTHS = {
   id: 100,
   store: 200,
+  sku: 300,
   actions: 120,
   seqNo: 70,
   city: 150,
   state: 100,
+  class: 120,
+  department: 150,
+  price: 100,
+  cost: 100
 };
 
 // Style Constants
@@ -43,3 +48,8 @@ export const GRID_CONTAINER_STYLE = {
 
 // Loading Delay
 export const LOADING_DELAY = 300;
+
+// Value Formatters
+export const VALUE_FORMATTERS = {
+  currency: (params: { value: number }) => params.value ? `$${params.value.toFixed(2)}` : '',
+}; 
