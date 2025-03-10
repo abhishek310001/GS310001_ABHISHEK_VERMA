@@ -1,12 +1,38 @@
-import './App.css'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Layout from './components/Layout';
+import { ChartPage, PlanningPage, SKUsPage, StoresPage } from './pages';
+
+// Create a theme
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#dc004e',
+    },
+  },
+});
 
 function App() {
-
   return (
-    <>
-      <h1>GS310001</h1>
-    </>
-  )
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/stores" element={<StoresPage />} />
+            <Route path="/skus" element={<SKUsPage />} />
+            <Route path="/planning" element={<PlanningPage />} />
+            <Route path="/chart" element={<ChartPage />} />
+            <Route path="/" element={<Navigate to="/stores" replace />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </ThemeProvider>
+  );
 }
 
-export default App
+export default App;
