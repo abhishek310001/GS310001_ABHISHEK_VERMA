@@ -23,6 +23,17 @@ export const GRID_PROPS = {
   suppressColumnVirtualisation: false
 };
 
+// Cell Styles
+export const CELL_STYLES = {
+  numeric: {
+    textAlign: 'right',
+    paddingRight: '10px'
+  },
+  header: {
+    backgroundColor: '#f5f5f5'
+  }
+} as const;
+
 // Column Widths
 export const COLUMN_WIDTHS = {
   id: 100,
@@ -35,7 +46,11 @@ export const COLUMN_WIDTHS = {
   class: 120,
   department: 150,
   price: 100,
-  cost: 100
+  cost: 100,
+  salesUnits: 80,
+  salesDollars: 100,
+  gmDollars: 100,
+  gmPercentage: 80,
 };
 
 // Style Constants
@@ -52,4 +67,5 @@ export const LOADING_DELAY = 300;
 // Value Formatters
 export const VALUE_FORMATTERS = {
   currency: (params: { value: number }) => params.value ? `$${params.value.toFixed(2)}` : '',
+  percentage: (params: { value: number }) => params.value ? `${params.value.toFixed(1)}%` : ''
 }; 
