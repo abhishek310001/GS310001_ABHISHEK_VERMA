@@ -9,6 +9,7 @@ import StoreDialog from '../components/stores/StoreDialog';
 import StoresGrid from '../components/stores/StoresGrid';
 import 'ag-grid-community/styles/ag-grid.css';
 import 'ag-grid-community/styles/ag-theme-alpine.css';
+import { removePlanningDataForStore } from '../redux/planningSlice';
 
 ModuleRegistry.registerModules([ClientSideRowModelModule, RowDragModule]);
 
@@ -100,6 +101,7 @@ const StoresPage: React.FC = () => {
   const handleDeleteStore = useCallback((id: string) => {
     if (window.confirm('Are you sure you want to delete this store?')) {
       dispatch(deleteStore(id));
+      dispatch(removePlanningDataForStore(id));
     }
   }, [dispatch]);
 

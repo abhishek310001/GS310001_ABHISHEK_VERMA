@@ -6,6 +6,7 @@ import { addSKU, updateSKU, deleteSKU } from '../redux/skuSlice';
 import { SKU } from '../types';
 import SKUDialog from '../components/skus/SKUDialog';
 import SKUsGrid from '../components/skus/SKUsGrid';
+import { removePlanningDataForSKU } from '../redux/planningSlice';
 
 interface SKUFormData {
   label: string;
@@ -101,6 +102,7 @@ const SKUsPage: React.FC = () => {
   const handleDeleteSKU = useCallback((id: string) => {
     if (window.confirm('Are you sure you want to delete this SKU?')) {
       dispatch(deleteSKU(id));
+      dispatch(removePlanningDataForSKU(id));
     }
   }, [dispatch]);
 
