@@ -8,3 +8,13 @@ export interface Store {
     city: string;
     state: string;
   }
+
+// SKU type
+export interface SKU {
+    id: string;
+    label: string;
+    class: string;
+    department: string;
+    price: number;
+    cost: number;
+  }
