@@ -2,6 +2,11 @@
 
 A Progressive Web App for manipulating and analyzing data. This application allows users to manage store and SKU dimensions, enter measure data, calculate expressions, and visualize data through charts.
 
+## Live Demo
+
+The application is deployed and can be accessed for live testing at:
+[https://gs-310001-abhishek-verma.vercel.app/](https://gs-310001-abhishek-verma.vercel.app/)
+
 ## Features
 
 - **Store Management**: Add, edit, delete, and reorder stores
