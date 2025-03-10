@@ -1,54 +1,66 @@
-# React + TypeScript + Vite
+# Data Viewer App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Progressive Web App for manipulating and analyzing data. This application allows users to manage store and SKU dimensions, enter measure data, calculate expressions, and visualize data through charts.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Store Management**: Add, edit, delete, and reorder stores
+- **SKU Management**: Add, edit, and delete with their prices and costs
+- **Planning Grid**: Cross join of Stores and SKUs along the rows, and Calendar along the columns
+  - Editable Sales Units
+  - Calculated Sales Dollars (Sales Units * Price)
+  - Calculated GM Dollars (Sales Dollars - Sales Units * Cost)
+  - Calculated GM Percentage (GM Dollars / Sales Dollars) with conditional formatting
+- **Chart Visualization**: Dual axis bar chart showing GM Dollars and GM Percentage for a selected store
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React
+- TypeScript
+- Vite
+- Material UI
+- AG-Grid
+- Recharts
+- React Router
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm (v6 or higher)
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/abhishek310001/GS310001_ABHISHEK_VERMA
+cd GS310001_ABHISHEK_VERMA
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Install dependencies
+```bash
+npm install
 ```
+
+3. Start the development server
+```bash
+npm run dev
+```
+
+4. Build for production
+```bash
+npm run build
+```
+
+5. Preview the production build
+```bash
+npm run preview
+```
+
+## Usage
+
+1. **Stores Page**: Manage your stores
+2. **SKUs Page**: Manage your SKUs with their prices and costs
+3. **Planning Page**: Enter sales units data and view calculated fields
+4. **Chart Page**: Visualize GM Dollars and GM Percentage for a selected store
